@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kathrin — Zeitgenössische Kunst</title>
+  <meta name="description" content="Kathrin — Zeitgenössische Künstlerin aus Berlin. Originale Gemälde und Arbeiten auf Papier. Unikate zu erwerben." />
+  <meta name="author" content="Kathrin" />
+  <meta property="og:title" content="Kathrin — Zeitgenössische Kunst" />
+  <meta property="og:description" content="Originale Gemälde und Arbeiten auf Papier. Galerie, Studio, Ausstellungen." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" id="site-header" role="banner">
+    <nav class="nav-inner" aria-label="Hauptnavigation">
+      <a href="#home" class="nav-logo" aria-label="Kathrin — zurück zur Startseite">
+        <span class="nav-logo-k">K</span>athrin
+      </a>
+
+      <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="#galerie" class="nav-link">Galerie</a></li>
+        <li><a href="#ueber"   class="nav-link">Über mich</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        <li>
+          <a href="#kontakt" class="nav-cta" aria-label="Werk anfragen">
+            Werk anfragen
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section class="hero" id="home" aria-label="Willkommen">
+
+      <!-- Dünne vertikale Dekor-Linie links -->
+      <div class="hero-deco-line" aria-hidden="true"></div>
+
+      <!-- Eyebrow -->
+      <p class="hero-eyebrow" aria-label="Standort und Jahr">
+        <span class="eyebrow-city">Berlin</span>
+        <span class="eyebrow-divider" aria-hidden="true">—</span>
+        <span class="eyebrow-year">2024</span>
+      </p>
+
+      <!-- Haupttitel -->
+      <div class="hero-title-block">
+        <h1 class="hero-name" aria-label="Kathrin">
+          <span class="hero-name-inner" aria-hidden="true">Kathrin</span>
+          <span class="sr-only">Kathrin</span>
+        </h1>
+        <p class="hero-tagline">
+          <em>Zeitgenössische Kunst</em>
+        </p>
+      </div>
+
+      <!-- Beschreibung + CTA -->
+      <div class="hero-bottom">
+        <div class="hero-rule-group" aria-hidden="true">
+          <span class="hero-rule"></span>
+        </div>
+        <p class="hero-description">
+          Zwischen Stille und Farbe — Arbeiten<br />
+          auf Leinwand und Papier, die Räume<br />
+          entstehen lassen.
+        </p>
+        <div class="hero-actions">
+          <a href="#galerie" class="btn-primary">
+            Galerie entdecken
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#kontakt" class="btn-ghost">Anfrage stellen</a>
+        </div>
+      </div>
+
+      <!-- Scroll-Indikator -->
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-track">
+          <span class="scroll-thumb"></span>
+        </span>
+        <span class="scroll-label">Scroll</span>
+      </div>
+
+      <!-- Hintergrundelement -->
+      <div class="hero-bg-circle" aria-hidden="true"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         GALERIE
+    ═══════════════════════════════════════════ -->
+    <section class="galerie" id="galerie" aria-label="Galerieübersicht">
+      <div class="section-intro">
+        <div class="section-intro-left">
+          <span class="eyebrow">Aktuelle Arbeiten</span>
+          <h2 class="section-heading">Originale Werke</h2>
+        </div>
+        <div class="section-intro-right">
+          <p class="section-note">
+            Alle Werke sind Unikate.<br />
+            Kaufanfragen via Kontaktformular.
+          </p>
+        </div>
+      </div>
+
+      <!-- Grid wird per JavaScript befüllt -->
+      <div id="galerie-grid" class="galerie-grid" role="list" aria-label="Kunstwerke">
+        <!-- Skeleton-Loader (bis JSON geladen) -->
+        <div class="skeleton skeleton--tall"   aria-hidden="true"></div>
+        <div class="skeleton skeleton--medium" aria-hidden="true"></div>
+        <div class="skeleton skeleton--short"  aria-hidden="true"></div>
+      </div>
+
+      <!-- Galerie-Fußzeile -->
+      <div class="galerie-footer">
+        <p class="galerie-note">
+          Weitere Werke auf Anfrage — <a href="mailto:studio@kathrin-art.de">studio@kathrin-art.de</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ÜBER
+    ═══════════════════════════════════════════ -->
+    <section class="ueber" id="ueber" aria-label="Über die Künstlerin">
+      <div class="ueber-inner">
+
+        <!-- Portrait-Spalte -->
+        <div class="ueber-visual" aria-hidden="true">
+          <div class="ueber-portrait">
+            <div class="portrait-placeholder">
+              <span class="portrait-label">Portrait</span>
+              <!-- Ersetzen Sie dieses div durch ein <img>-Tag, z.B.:
+                   <img src="images/uploads/portrait.jpg" alt="Kathrin im Studio" /> -->
+            </div>
+            <div class="portrait-frame-deco"></div>
+            <div class="portrait-caption">Studio Berlin, 2024</div>
+          </div>
+        </div>
+
+        <!-- Text-Spalte -->
+        <div class="ueber-text">
+          <span class="eyebrow">Über die Künstlerin</span>
+          <h2 class="ueber-heading">Kathrin</h2>
+
+          <blockquote class="ueber-zitat">
+            <p>„Ich male nicht, was ich sehe — ich male,<br />
+            was bleibt, wenn man aufhört zu schauen."</p>
+          </blockquote>
+
+          <div class="ueber-body">
+            <p>
+              Kathrin ist eine zeitgenössische Künstlerin, die in Berlin lebt und
+              arbeitet. Ihre Werke entstehen an der Schnittstelle von Abstraktion
+              und Empfindung — großformatige Farbfelder, die dem Raum das Atmen
+              beibringen.
+            </p>
+            <p>
+              Nach ihrem Studium an der Hochschule für Bildende Künste stellte
+              sie in Galerien in Berlin, Wien und Zürich aus. Ihre Arbeiten
+              befinden sich in internationalen Privatsammlungen.
+            </p>
+            <p>
+              Sie arbeitet vorwiegend mit Acryl und Öl auf großformatiger Leinwand,
+              ergänzt durch Arbeiten auf Papier, die als eigenständige Serie neben
+              den Gemälden bestehen.
+            </p>
+          </div>
+
+          <!-- Kennzahlen -->
+          <dl class="ueber-stats">
+            <div class="stat-item">
+              <dt class="stat-label">Jahre Praxis</dt>
+              <dd class="stat-value">12+</dd>
+            </div>
+            <div class="stat-item">
+              <dt class="stat-label">Ausstellungen</dt>
+              <dd class="stat-value">40+</dd>
+            </div>
+            <div class="stat-item">
+              <dt class="stat-label">Länder</dt>
+              <dd class="stat-value">6</dd>
+            </div>
+            <div class="stat-item">
+              <dt class="stat-label">Sammlungen</dt>
+              <dd class="stat-value">20+</dd>
+            </div>
+          </dl>
+
+          <!-- Ausstellungs-Timeline -->
+          <div class="ueber-timeline">
+            <h3 class="timeline-heading">Ausgewählte Ausstellungen</h3>
+            <ul class="timeline-list" role="list">
+              <li class="timeline-item">
+                <span class="timeline-year">2024</span>
+                <span class="timeline-event">„Schwere des Lichts" — Galerie Nord, Berlin</span>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2023</span>
+                <span class="timeline-event">„Stille Räume" — Kunsthalle Wien, Wien</span>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2022</span>
+                <span class="timeline-event">Art Basel, Sektor Statements, Basel</span>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2021</span>
+                <span class="timeline-event">„Zwischen den Farben" — Haus Konstruktiv, Zürich</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         KONTAKT
+    ═══════════════════════════════════════════ -->
+    <section class="kontakt" id="kontakt" aria-label="Kontakt und Kaufanfragen">
+      <div class="kontakt-inner">
+
+        <!-- Linke Info-Spalte -->
+        <div class="kontakt-info">
+          <span class="eyebrow">Kontakt</span>
+          <h2 class="kontakt-heading">
+            Kaufanfragen<br />
+            <em>&amp; Ausstellungen</em>
+          </h2>
+          <p class="kontakt-intro">
+            Für Kaufanfragen, Kooperationen oder Ausstellungsanfragen
+            schreiben Sie mir gerne direkt oder nutzen Sie das Formular.
+          </p>
+
+          <div class="kontakt-details">
+            <div class="kontakt-detail-item">
+              <span class="detail-label">E-Mail</span>
+              <a href="mailto:studio@kathrin-art.de" class="detail-value detail-link">
+                studio@kathrin-art.de
+              </a>
+            </div>
+            <div class="kontakt-detail-item">
+              <span class="detail-label">Studio</span>
+              <span class="detail-value">Berlin, Deutschland</span>
+            </div>
+            <div class="kontakt-detail-item">
+              <span class="detail-label">Reaktionszeit</span>
+              <span class="detail-value">Innerhalb von 48 Stunden</span>
+            </div>
+          </div>
+
+          <!-- Dekor-Zitat -->
+          <p class="kontakt-deko-zitat" aria-hidden="true">
+            „Jedes Werk sucht seinen Ort."
+          </p>
+        </div>
+
+        <!-- Rechte Formular-Spalte -->
+        <div class="kontakt-form-wrap">
+          <form class="kontakt-form" id="kontakt-form" novalidate aria-label="Kontaktformular">
+
+            <div class="form-row form-row--split">
+              <div class="form-field">
+                <label class="form-label" for="f-name">Name</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="f-name"
+                  name="name"
+                  placeholder="Ihr Name"
+                  autocomplete="name"
+                  required
+                  aria-required="true"
+                />
+                <span class="form-error" id="f-name-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="f-email">E-Mail</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="f-email"
+                  name="email"
+                  placeholder="ihre@email.de"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                />
+                <span class="form-error" id="f-email-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="f-betreff">Betreff</label>
+                <div class="form-select-wrap">
+                  <select class="form-input form-select" id="f-betreff" name="betreff">
+                    <option value="" disabled selected>Bitte wählen …</option>
+                    <option value="kaufanfrage">Kaufanfrage zu einem Werk</option>
+                    <option value="auftrag">Auftragsarbeit / Kommission</option>
+                    <option value="ausstellung">Ausstellungsanfrage</option>
+                    <option value="presse">Presse &amp; Medien</option>
+                    <option value="sonstiges">Sonstiges</option>
+                  </select>
+                  <svg class="select-arrow" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
+                    <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="f-werk">Werk (optional)</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="f-werk"
+                  name="werk"
+                  placeholder="Titel des Werks, das Sie interessiert"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="f-nachricht">Nachricht</label>
+                <textarea
+                  class="form-input form-textarea"
+                  id="f-nachricht"
+                  name="nachricht"
+                  rows="5"
+                  placeholder="Ihre Nachricht an Kathrin …"
+                  required
+                  aria-required="true"
+                ></textarea>
+                <span class="form-error" id="f-nachricht-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row form-row--footer">
+              <p class="form-privacy">
+                Ihre Daten werden vertraulich behandelt und nicht weitergegeben.
+              </p>
+              <button type="submit" class="btn-submit" id="btn-submit">
+                <span class="btn-submit-text">Nachricht senden</span>
+                <svg class="btn-submit-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="btn-submit-spinner" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" stroke-dasharray="28" stroke-dashoffset="10"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Erfolgsmeldung -->
+            <div class="form-success" id="form-success" role="status" aria-live="polite" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p>Vielen Dank für Ihre Nachricht.<br />
+              Ich melde mich innerhalb von 48 Stunden bei Ihnen.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-name">Kathrin</span>
+        <span class="footer-tagline">Zeitgenössische Kunst · Berlin</span>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer-Navigation">
+        <a href="#galerie">Galerie</a>
+        <a href="#ueber">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="/admin/" class="footer-cms-link">Studio CMS</a>
+      </nav>
+
+      <div class="footer-meta">
+        <p class="footer-copy">
+          © <span id="footer-year"></span> Kathrin. Alle Rechte vorbehalten.
+        </p>
+        <p class="footer-legal">
+          Alle abgebildeten Werke sind urheberrechtlich geschützt.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox / Werk-Detail Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Werkdetail" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Schließen">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="lightbox-inner">
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="lightbox-meta">
+        <span class="eyebrow">Werkdetail</span>
+        <h3 class="lightbox-titel" id="lightbox-titel"></h3>
+        <p class="lightbox-beschreibung" id="lightbox-beschreibung"></p>
+        <p class="lightbox-preis" id="lightbox-preis"></p>
+        <a href="#kontakt" class="btn-primary lightbox-anfrage" id="lightbox-anfrage">
+          Werk anfragen
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="lightbox-backdrop" id="lightbox-backdrop" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
