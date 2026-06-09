@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Studio — Kathrin CMS</title>
+  <style>
+    /* Minimales Lade-Splash bis Decap CMS bereit ist */
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, sans-serif;
+      background: #fafaf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #1a1816;
+    }
+    .cms-loading {
+      text-align: center;
+      opacity: 0.45;
+    }
+    .cms-loading p {
+      font-size: 0.6875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="cms-loading" id="cms-loading">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="26" height="26" stroke="#1a1816" stroke-width="1"/>
+      <path d="M8 14h12M14 8v12" stroke="#1a1816" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <p>Studio wird geladen …</p>
+  </div>
+
+  <!--
+    Decap CMS (ehemals Netlify CMS) — offizielle CDN-Einbindung.
+    Dokumentation: https://decapcms.org/docs/
+
+    SETUP-CHECKLISTE:
+    1. In admin/config.yml: repo-Wert auf Ihren GitHub-Account anpassen
+    2. GitHub OAuth App einrichten (oder Netlify Identity verwenden)
+    3. Auf GitHub Pages: Settings → Pages → Deploy from branch: main
+    4. CORS: GitHub erlaubt Decap CMS automatisch bei korrekter OAuth-Konfiguration
+  -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+# ═══════════════════════════════════════════════════════════
+#  KATHRIN — Zeitgenössische Kunst
+#  Decap CMS Konfiguration  ·  admin/config.yml
+#
+#  SETUP:
+#  1. `repo` anpassen: IHR-GITHUB-USERNAME/IHR-REPO-NAME
+#  2. GitHub OAuth App anlegen:
+#       → github.com → Settings → Developer settings → OAuth Apps
+#       → Homepage URL: https://IHR-USERNAME.github.io/IHR-REPO
+#       → Callback URL: https://api.netlify.com/auth/done
+#  3. Netlify-Account für OAuth-Proxy (kostenlos, ohne Netlify-Hosting):
+#       → app.netlify.com → Sites → Add new site → "Sites without deploys"
+#       → Site settings → Access control → OAuth → Install GitHub provider
+#       → Client ID + Secret aus Schritt 2 eintragen
+#  4. base_url auf Ihren Netlify-OAuth-Proxy anpassen (s.u.)
+# ═══════════════════════════════════════════════════════════
+
+# ─── Backend ──────────────────────────────────────────────
+backend:
+  name: github
+  # ↓ ANPASSEN: github-username/repository-name
+  repo: IHR-GITHUB-USERNAME/IHR-REPO-NAME
+  branch: main
+  # OAuth-Proxy via Netlify (kostenloser Account reicht)
+  # ↓ ANPASSEN: Ihre Netlify-Site-URL
+  base_url: https://api.netlify.com
+
+# ─── Lokale Entwicklung ───────────────────────────────────
+# Zum lokalen Testen: `npx netlify-cms-proxy-server` starten,
+# dann die folgenden zwei Zeilen einkommentieren und den backend-Block auskommentieren:
+# local_backend: true
+
+# ─── Medien-Ablage ────────────────────────────────────────
+media_folder:  "images/uploads"    # Speicherpfad im Repository
+public_folder: "/images/uploads"   # Öffentlicher URL-Pfad
+
+# ─── Bildoptimierungs-Hinweis ─────────────────────────────
+# Empfohlene Bildgröße: mind. 1400px breit, max. 3 MB, JPEG oder WebP
+# Bilder werden NICHT automatisch optimiert — bitte vorab komprimieren:
+# https://squoosh.app
+
+# ─── Sprache der CMS-Oberfläche ───────────────────────────
+locale: de
+
+# ─── Collections ──────────────────────────────────────────
+# Wir nutzen das `files`-Konzept: alle Kunstwerke werden in
+# einer einzigen JSON-Datei (content/kunstwerke.json) gespeichert.
+# Das `list`-Widget ermöglicht das Hinzufügen, Bearbeiten und
+# Löschen einzelner Einträge direkt im Browser.
+
+collections:
+
+  - name: "kunstwerke"
+    label: "🎨 Kunstwerke"
+    description: >
+      Hier verwalten Sie alle Werke der Galerie.
+      Jeder Eintrag erscheint als Karte auf der Website.
+      Die Reihenfolge entspricht der Anzeigereihenfolge.
+    files:
+
+      - name:  "alle-werke"
+        label: "Alle Werke"
+        file:  "content/kunstwerke.json"
+
+        # Das äußerste Feld muss dem JSON-Schlüssel entsprechen.
+        # Struktur der Datei: { "kunstwerke": [ {...}, {...} ] }
+        fields:
+
+          - name:  "kunstwerke"
+            label: "Werksliste"
+            label_singular: "Werk"
+            widget: "list"
+            summary: "{{fields.titel}}  ·  {{fields.preis}}"
+            minimize_collapsed: true
+
+            fields:
+
+              - name:  "titel"
+                label: "Titel"
+                widget: "string"
+                hint: "Werktitel, z. B. „Stille I""
+                required: true
+
+              - name:  "preis"
+                label: "Preis / Verfügbarkeit"
+                widget: "string"
+                hint: "z. B. „€ 2.400" oder „Nicht käuflich" oder „Verkauft""
+                required: true
+                default: "Auf Anfrage"
+
+              - name:  "beschreibung"
+                label: "Beschreibung"
+                widget: "text"
+                hint: >
+                  Technik, Format (B × H in cm), Jahr und kurze Werkbeschreibung.
+                  Empfohlen: 2–4 Sätze.
+                required: true
+
+              - name:  "bild"
+                label: "Bild"
+                widget: "image"
+                hint: >
+                  Empfohlen: mind. 1400 px breit, Hochformat, JPEG oder WebP, max. 3 MB.
+                  Bitte vorab komprimieren (squoosh.app).
+                required: true
+                media_library:
+                  config:
+                    multiple: false

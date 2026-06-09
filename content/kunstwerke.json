@@ -1,0 +1,40 @@
+{
+  "kunstwerke": [
+    {
+      "titel": "Stille I",
+      "preis": "2.400 EUR",
+      "beschreibung": "Acryl auf Leinwand, 120 x 90 cm, 2024. Ein grossformatiges Werk ueber das Schweigen vor dem Laerm. Schichten aus gebrochenen Weiss- und Ockertoenen, die Stille als physische Substanz erfahrbar machen. Unikat, signiert und zertifiziert.",
+      "bild": "https://picsum.photos/seed/kathrin-stille1/800/1000"
+    },
+    {
+      "titel": "Zwischenraum",
+      "preis": "1.800 EUR",
+      "beschreibung": "Mischtechnik auf Buettenpapier, 80 x 60 cm, 2024. Schichten aus Pigment, Asche und Bleistift, die Vergangenheit sichtbar machen. Das Werk entstand waehrend einer Residency in der Toskana. Unikat, gerahmt in Eiche natur.",
+      "bild": "https://picsum.photos/seed/kathrin-zwischen/700/900"
+    },
+    {
+      "titel": "Flut",
+      "preis": "3.200 EUR",
+      "beschreibung": "Oel auf Leinwand, 150 x 110 cm, 2023. Das Bild entstand nach einer Reise an die Nordsee im November. Eine Studie ueber Grau, Tiefe und die Unkontrollierbarkeit von Wasser. Aus der Serie Winterreise. Unikat, signiert.",
+      "bild": "https://picsum.photos/seed/kathrin-flut/900/1100"
+    },
+    {
+      "titel": "Erde, rot",
+      "preis": "4.800 EUR",
+      "beschreibung": "Acryl und Eisenoxidpigment auf Leinwand, 200 x 160 cm, 2024. Das grossformatigste Werk der Serie Elementar. Die rote Pigmentlage wurde aus echtem Haematit gewonnen und mehrfach lasurartig aufgetragen. Unikat, atelier-frisch.",
+      "bild": "https://picsum.photos/seed/kathrin-erde/800/960"
+    },
+    {
+      "titel": "Morgengrau",
+      "preis": "1.200 EUR",
+      "beschreibung": "Tusche und Aquarell auf Papier, 50 x 40 cm, 2024. Eine kleine, meditative Arbeit aus der Fruhserie 2024. Entstanden im ersten Licht des Ateliers, bevor der Tag beginnt. Im Passepartout, ungerahmt.",
+      "bild": "https://picsum.photos/seed/kathrin-morgen/600/750"
+    },
+    {
+      "titel": "Resonanz",
+      "preis": "2.900 EUR",
+      "beschreibung": "Oel und Wachs auf Holz, 100 x 100 cm, 2023. Quadratisches Format, enkaustisch ueberarbeitet. Das Wachs schliesst die Pigmentschichten ein wie Bernstein. Die Oberflaeche schimmert je nach Lichteinfall. Unikat auf massiver Eichenplatte.",
+      "bild": "https://picsum.photos/seed/kathrin-resonanz/800/800"
+    }
+  ]
+}
